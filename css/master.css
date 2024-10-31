@@ -1,0 +1,203 @@
+:root {
+  --Gradient-start: hsl(6, 100%, 80%);
+  --to: hsl(335, 100%, 65%);
+  --Pale-Blue: hsl(243, 100%, 93%);
+  --Grayish-Blue: hsl(229, 7%, 55%);
+  --Dark-Blue: hsl(228, 56%, 26%);
+  --Very-Dark-Blue: hsl(229, 57%, 11%);
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  background-color: var(--Very-Dark-Blue);
+}
+
+.desktop {
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+  z-index: -1;
+}
+.mobile {
+  z-index: -1;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  margin: 250px;
+  gap: 20px;
+}
+.box1 {
+  padding: 20px;
+  background-color: var(--Dark-Blue);
+  border-radius: 6px;
+  width: 100%;
+  max-width: 200px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-top-right-radius: 60px;
+}
+.box1 .chioce {
+  margin-top: 20px;
+  margin-left: 5px;
+}
+.box1 .chioce img {
+  margin-right: 10px;
+  background-color: var(--Very-Dark-Blue);
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+.box2 {
+  background-color: var(--Dark-Blue);
+  padding: 20px;
+  width: 300px;
+  border-radius: 6px;
+  height: 80px;
+  transform: translateY(30px);
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  -webkit-transform: translateY(30px);
+  -moz-transform: translateY(30px);
+  -ms-transform: translateY(30px);
+  -o-transform: translateY(30px);
+}
+
+.box2 p {
+  color: var(--Grayish-Blue);
+  font-size: 14px;
+}
+.box2 span {
+  color: var(--Pale-Blue);
+  font-size: 12px;
+}
+.box2 .progress {
+  background-color: var(--Very-Dark-Blue);
+  height: 14px;
+  overflow: hidden;
+  border-radius: 20px;
+  margin-top: 15px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+.box2 span.taked {
+  position: relative;
+  display: block;
+  height: calc(100% - 1px);
+  background-image: linear-gradient(to right, var(--Gradient-start), var(--to));
+  border-radius: 20px;
+  border: 1px solid var(--Very-Dark-Blue);
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+.box2 .stat {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5px;
+  justify-content: space-between;
+}
+.box2 span.taked::before {
+  content: "";
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  background-color: white;
+  right: 0;
+  transform: translateY(1px);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  -webkit-transform: translateY(1px);
+  -moz-transform: translateY(1px);
+  -ms-transform: translateY(1px);
+  -o-transform: translateY(1px);
+}
+.box2 .b::before {
+  content: "185";
+  right: 25px;
+  position: absolute;
+  padding: 20px;
+  font-size: 30px;
+  font-weight: 700;
+  background-color: white;
+  width: 80px;
+  height: 20px;
+  top: -50px;
+  border-radius: 6px;
+  color: var(--Very-Dark-Blue);
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  overflow: hidden;
+}
+.box2 .b::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 30px;
+  border-width: 20px;
+  right: 25px;
+  top: -40px;
+  border-color: transparent white transparent transparent;
+  border-style: solid;
+}
+.copyright {
+  display: flex;
+  justify-content: center;
+  color: var(--Gradient-start);
+}
+.copyright img {
+  width: 20px;
+  transform: translateY(3px);
+  -webkit-transform: translateY(3px);
+  -moz-transform: translateY(3px);
+  -ms-transform: translateY(3px);
+  -o-transform: translateY(3px);
+}
+.copyright a {
+  text-decoration: none;
+  color: var(--to);
+}
+@media (min-width: 768px) {
+  .mobile {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .desktop {
+    display: none;
+  }
+  .container {
+    margin: 100px 20px;
+    flex-direction: column;
+    gap: 0;
+  }
+  .mobile {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+  }
+  .box1 {
+    max-width: 300px;
+  }
+}
